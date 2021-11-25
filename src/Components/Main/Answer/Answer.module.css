@@ -1,0 +1,25 @@
+.AnswerItem{
+    border: 3px solid #999;
+    border-radius: 15px;
+    padding: 10px 15px;
+    text-align: left;
+    transition: border-color .3s linear;
+    cursor: pointer;
+    max-width: 83%;
+
+    margin: 0 0 15px;
+}
+
+.AnswerItem:hover{
+    border-color: #000;
+}
+
+
+.AnswerItem span{
+    display: inline-block;
+}
+
+.AnswerItem span:nth-child(1){
+    margin-right: 10px;
+}
+

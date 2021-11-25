@@ -1,0 +1,16 @@
+.main {
+    padding: 30px 40px;
+}
+
+.main h1 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 100%;
+    margin: 0 0 45px;
+}
+
+.main__wrapper{
+    margin: 0 auto;
+    max-width: 90%;
+    transform: translateX(50px);
+}

@@ -1,0 +1,10 @@
+.layout {
+    width: 100%;
+    min-height: 100vh;
+    background: -webkit-linear-gradient(180deg, rgb(38, 67, 124) 46%, rgb(86, 181, 184));
+    background: -moz-linear-gradient(180deg, rgb(38, 67, 124) 46%, rgb(86, 181, 184));
+    background: linear-gradient(180deg, rgb(38, 67, 124) 46%, rgb(86, 181, 184));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
