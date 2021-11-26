@@ -16,9 +16,8 @@ const Main = props => {
     const [numberCorrectAnswers, setNumberCorrectAnswers] = useState(0);
     const [colorActive, setColorActive] = useState(false);
 
-    console.log(colorActive);
 
-    
+ 
 
 
 
@@ -29,16 +28,14 @@ const Main = props => {
         if (answerId === listAll[currentQuestion].rightAnswer) {
             setNumberCorrectAnswers(numberCorrectAnswers + 1)
         }
-        
 
-        colorOnClick()
+        colorOnClick();
 
-        setTimeout(() => {
-            setCurrentQuestion(currentQuestion + 1); 
-            setColorActive(false)
-        }, 1000);
+        setTimeout(() => setCurrentQuestion(currentQuestion + 1), 1000);
         
-       
+        if (listAll.length === currentQuestion - 1) {
+            
+        }
 
         finishedChange();
     }
@@ -97,10 +94,8 @@ const Main = props => {
                                     answerChange={changeQuestion}
                                     checkAnswers={countRightAnswers}
                                     answerId={item.id}
-                                    text={item.text} 
+                                    text={item.text} />
                                     colorActive={colorActive}
-                                    />
-                                   
                             })
                         }
 
