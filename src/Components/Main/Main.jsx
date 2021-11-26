@@ -30,8 +30,9 @@ const Main = props => {
         }
 
         colorOnClick();
+        setCurrentQuestion(currentQuestion + 1)
 
-        setTimeout(() => setCurrentQuestion(currentQuestion + 1), 1000);
+        // setTimeout(() =>, 1000);
         
         if (listAll.length === currentQuestion - 1) {
             
