@@ -3,15 +3,16 @@ import styles from './Answer.module.css';
 
 
 
-const Answer = props => {
+const Answer = ({ text, answerId, answerChange, finished, colorActive }) => {
+    
     return (
-        <div className={styles.AnswerItem}>
+        <div className={`${styles.AnswerItem} ${colorActive ? styles.answerActive : ''}`} onClick={finished ? () => console.log('true') : () => answerChange(answerId)}>
             <span>
-                1.
+                {answerId}.
             </span>
 
             <span>
-                вариант ответа
+                {text}
             </span>
         </div>
     )

@@ -7,6 +7,7 @@ import Container from './Components/Common/Container/Container';
 import Main from './Components/Main/Main';
 
 const App = () => {
+
   return (
     <div className="App">
       <Layout>

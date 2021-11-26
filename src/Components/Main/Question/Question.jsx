@@ -1,15 +1,16 @@
 import React from "react";
 import styles from './Question.module.css';
 
-const Question = () => {
+const Question = ({question, numberQuestion}) => {
+    
     return(
         <div>
             <div className={styles.question}>
                 <span>
-                    1.
+                    {numberQuestion}.
                 </span>
                 <span>
-                    Вопрос
+                    {question}
                 </span>
             </div>
         </div>
