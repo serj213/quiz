@@ -3,10 +3,10 @@ import styles from './Answer.module.css';
 
 
 
-const Answer = ({ text, answerId, answerChange, finished, colorActive }) => {
-    
+const Answer = ({ text, answerId, answerChange, finished, colorActive}) => {
+      
     return (
-        <div className={`${styles.AnswerItem} ${colorActive ? styles.answerActive : ''}`} onClick={finished ? () => console.log('true') : () => answerChange(answerId)}>
+        <div className={`${styles.AnswerItem} ${colorActive === answerId ? styles.answerActive : ''}`} onClick={finished ? '' : () => answerChange(answerId)}>
             <span>
                 {answerId}.
             </span>

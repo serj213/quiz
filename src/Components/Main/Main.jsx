@@ -14,60 +14,39 @@ const Main = props => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [isFinished, setIsFinished] = useState(false);
     const [numberCorrectAnswers, setNumberCorrectAnswers] = useState(0);
-    const [colorActive, setColorActive] = useState(false);
-
-
- 
-
-
+    const [colorActive, setColorActive] = useState(0);
 
     const changeQuestion = answerId => {
 
-
+        setColorActive(answerId);
 
         if (answerId === listAll[currentQuestion].rightAnswer) {
             setNumberCorrectAnswers(numberCorrectAnswers + 1)
         }
-
-        colorOnClick();
-        setCurrentQuestion(currentQuestion + 1)
-
-        // setTimeout(() =>, 1000);
-        
-        if (listAll.length === currentQuestion - 1) {
-            
-        }
-
-        finishedChange();
-    }
-
-    const colorOnClick = () => {
-        setColorActive(true);
-    }
-
-
-    const finishedChange = () => {
 
         if (listAll.length === currentQuestion + 1) {
             setIsFinished(true);
             setCurrentQuestion(0)
         } else {
 
+            setTimeout(() => setCurrentQuestion(currentQuestion + 1), 1000);
         }
     }
+
+    React.useEffect(() => {
+
+        setColorActive(0);
+
+    }, [currentQuestion])
+
+
+
+
 
     const replayQuiz = () => {
         setIsFinished(false);
         setNumberCorrectAnswers(0)
     }
-
-
-    const countRightAnswers = answerId => {
-
-        console.log(answerId);
-
-    }
-
 
 
     if (isFinished) {
@@ -84,7 +63,6 @@ const Main = props => {
 
                 <div className={styles.main__wrapper}>
 
-
                     <Question numberQuestion={listAll[currentQuestion].id} question={listQuestion[currentQuestion].question} />
 
                     <div className={styles.main__inner}>
@@ -93,10 +71,11 @@ const Main = props => {
                             listAll[currentQuestion].answers.map((item, index) => {
                                 return <Answer key={index} finished={isFinished}
                                     answerChange={changeQuestion}
-                                    checkAnswers={countRightAnswers}
                                     answerId={item.id}
-                                    text={item.text} />
+                                    text={item.text}
                                     colorActive={colorActive}
+                                />
+
                             })
                         }
 
